@@ -10,6 +10,7 @@ module.exports = {
         name: "content",
         path: `${__dirname}/content/`
       }
-    }
+    },
+    "gatsby-transformer-remark"
   ]
 };
