@@ -15,7 +15,7 @@ In this final part of our case study, I’ll discuss a few specific issues we ra
 
 abof’s product listing page is an infinitely scrolling grid of product images that loads 12 items per “page”. When a user visits a listing URL, our CDN responds with a pre-rendered HTML page with an initial set of 12 products already loaded. Another 12 products are loaded asynchronously the moment our JavaScript bundle loads and React takes over the page. From this point on, a new set of products is loaded whenever the user scrolls to the last loaded page.
 
-\[caption id="attachment\_496" align="aligncenter" width="2000"\][![abof.com product listing page](https://ankursethi.in/wp-content/uploads/2018/09/1_6NFXEuVE96eB5Nnb65RAjg.png)](https://ankursethi.in/wp-content/uploads/2018/09/1_6NFXEuVE96eB5Nnb65RAjg.png) Endless.\[/caption\]
+![abof.com product listing page](../images/abof_product_listing_page.png "Endless.")
 
 A [recent post](https://developers.google.com/web/updates/2016/07/infinite-scroller) on the Google Developers blog talks about the challenges inherent in implementing an efficient infinite scrolling list in the browser. The post is recommended reading, and I won’t repeat the information it already covers in this case study. Instead, I’ll talk about how we use a URL to keep track of the user’s position within our infinite scrolling grid without slowing the browser down.
 
@@ -86,7 +86,7 @@ However, we can’t blindly serve a cached page from the CDN to a user who is lo
 2.  A dropdown listing all the items she’s added to her cart.
 3.  If she’s added an item to her favorites, the tiny heart icon on the top right of each product image is filled-in.
 
-\[caption id="attachment\_497" align="aligncenter" width="1600"\][![abof.com top navigation (logged in)](https://ankursethi.in/wp-content/uploads/2018/09/1_OPMpugCAEb2JrwRJXqj2zA.png)](https://ankursethi.in/wp-content/uploads/2018/09/1_OPMpugCAEb2JrwRJXqj2zA.png) We display the user’s name and bag contents when she’s logged in.\[/caption\]
+![abof.com top navigation (logged in)](../images/abof_top_navigation_logged_in.png "We display the username and bag contents when logged in")
 
 Since this information varies from user to user, caching the page is not an option for logged-in users. On the other hand, letting our universal application deal with every request that comes from a logged-in user means it now has to handle a load it was never designed for.
 

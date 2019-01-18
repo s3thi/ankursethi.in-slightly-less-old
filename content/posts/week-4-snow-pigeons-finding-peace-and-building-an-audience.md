@@ -12,7 +12,7 @@ Coming from a hot country like India, and having seen snow only on Christmas spe
 
 At one point I was walking through a park and spotted a flock of pigeons sitting in the snow (how!!?) When I went close to them to take a picture, the entire flock waddled towards me and surrounded me on all sides. They made themselves comfortable, ruffled their feathers until they were all big round grey balls of fuzz,  and stared at me in anticipation as I struggled to operate my phone with my freezing fingers. I think they were expecting me to feed them, but the only feed I had on me at the time was my Instagram feed (badum-tish). Sorry to disappoint, pigeons. Maybe next time.
 
-\[caption id="attachment\_570" align="aligncenter" width="4032"\][![Pigeons sitting in the snow](https://ankursethi.in/wp-content/uploads/2018/12/IMG_2740.jpg)](https://ankursethi.in/wp-content/uploads/2018/12/IMG_2740.jpg) Someone explain to me how they're not frozen solid\[/caption\]
+![Someone explain to me how they're not frozen solid](../images/pigeons.jpg "Pigeons sitting in the snow")
 
 I made sure to end each day in Novosibirsk with a bowl of [solyanka](https://en.wikipedia.org/wiki/Solyanka). My first order of business when I get back to Bangalore will be to figure out how to make this delicious soup in my own kitchen!
 

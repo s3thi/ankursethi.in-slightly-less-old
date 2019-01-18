@@ -81,7 +81,9 @@ In the end, we settled on a battle-tested technology stack built around React an
 
 What follows is a visual comparison of the legacy abof.com product listing page with the rewrite our team delivered on a 3G connection:
 
-\[caption id="attachment\_484" align="aligncenter" width="1600"\][![abof.com performance comparison](https://ankursethi.in/wp-content/uploads/2018/09/1_6NO0dbLuJTBbxSGkGxFxVw.png)](https://www.youtube.com/watch?v=6dy6xSGYygE) New React-powered product listing page vs the legacy product listing page. Click to view video.\[/caption\]
+![New React-powered product listing page vs the legacy product listing page.](../images/abof_performance_comparison.png "abof.com performance comparison")
+
+[Click to view video.](https://www.youtube.com/watch?v=6dy6xSGYygE)
 
 That’s over twice as fast! Here’s a video comparing the new abof.com product listing page with listing pages on some of the most popular e-commerce websites in India:
 

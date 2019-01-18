@@ -8,7 +8,7 @@ description: "In which I talk about surviving the Siberian winter, speaking abou
 
 Hello from Novosibirsk, Siberia! The temperature outside is -9ºC, the streets are covered in fresh white snow, and I'm sipping hot chocolate at a cafe near the [Novosibirsk Opera and Ballet Theatre](https://en.wikipedia.org/wiki/Novosibirsk_Opera_and_Ballet_Theatre). I came here to speak about Rust and WebAssembly at [DevFest Siberia 2018](https://gdg-siberia.com), and I'm staying here for a few extra days so I can explore the city.
 
-\[caption id="attachment\_548" align="aligncenter" width="2549"\][![A picture of me in the Siberian snow](https://ankursethi.in/wp-content/uploads/2018/11/IMG_2727.jpg)](https://ankursethi.in/wp-content/uploads/2018/11/IMG_2727.jpg) Yours truly in the Siberian snow\[/caption\]
+![A picture of me in the Siberian snow](../images/ankur_in_siberia.jpg "Yours truly in the Siberian snow")
 
 This is the first time in the 28 years I've been alive that I'm seeing snow. When I boarded my flight from Delhi I was afraid that I wouldn't be able to deal with the sub-zero temperatures in Siberia, but when I got here on Thursday I discovered that central heating exists. I'm glad to report that I'm cozy af, and the only time I have to deal with the cold is when I'm running from a building into my Yandex Taxi.
 

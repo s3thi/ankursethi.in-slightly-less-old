@@ -187,13 +187,13 @@ Our journey through the audio processing graph begins at an audio source node, a
 
 The signal from an audio source node can be piped into an instance of an `AudioDestinationNode` using `AudioNode`’s `connect()` method. In `playSample()`, we pipe the output of our `AudioBufferSourceNode` to the `destination` property of our `AudioContext`. This property is an instance of an audio destination node that represents the computer’s currently selected audio output device. The audio processing graph created by `playSample()` looks like this:
 
-![A simple audio processing graph](https://ankursethi.in/wp-content/uploads/2017/05/simple_graph.png)
+![A simple audio processing graph](../images/simple_graph.png "A simple audio processing graph")
 
 This is the simplest audio processing graph possible, consisting of only a source of audio and a destination. In reality, we’re not limited to just two audio nodes per audio context. Before our audio signals exits the graph at an audio destination node, it could pass through a number of audio effect nodes or analyzer nodes that change the nature of the audio signal in significant ways.
 
 Here’s an example of a more complex audio graph:
 
-![A complex audio processing graph](https://ankursethi.in/wp-content/uploads/2017/05/complex_graph.png)
+![A complex audio processing graph](../images/complex_graph.png "A complex audio processing graph")
 
 As we add more features to our sampler, we’ll talk about the different kinds of audio nodes available to us and use them to construct more complex audio graphs. For now, this is all you need to know to start using the WebAudio API.
 
@@ -264,7 +264,7 @@ Now try moving the playback rate slider and clicking the play button.
 
 To control the playback volume of our sample, we’ll add an audio processing node called `GainNode` between the `AudioBufferSourceNode` and the destination of our `AudioContext`. After we’re done, our audio processing graph will look like this:
 
-![Audio processing graph with a gain node](https://ankursethi.in/wp-content/uploads/2017/05/graph_with_gain_node.png)
+![Audio processing graph with a gain node](../images/graph_with_gain_node.png "Audio processing graph with a gain node")
 
 `GainNode` can be used to boost or attenuate the audio signal that passes through it. A gain of 1.0 means no change in the audio signal. A gain greater than 1.0 means the signal will be boosted (often causing unwanted distortions in the signal), and a gain of less than 1.0 means the signal will be attenuated.
 
