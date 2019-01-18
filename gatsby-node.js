@@ -1,5 +1,6 @@
 const path = require("path");
 const moment = require("moment");
+const { makePostUrl } = require("./src/utils/urls");
 
 const markdownQuery = (regex) => `
   {
@@ -41,11 +42,12 @@ exports.createPages = async ({ graphql, actions }) => {
   for (let edge of postResult.data.allMarkdownRemark.edges) {
     const date = moment(edge.node.frontmatter.date);
     const slug = edge.node.frontmatter.slug;
-    const postPath = `${date.year()}/${date.month() + 1}/${date.date()}/${slug}`;
+    const postPath = makePostUrl(date, slug);
     createPage({
       path: postPath,
       component: path.resolve("./src/templates/page.js"),
       context: {
+        // This should query on both date and slug.
         slug: edge.node.frontmatter.slug
       }
     });
