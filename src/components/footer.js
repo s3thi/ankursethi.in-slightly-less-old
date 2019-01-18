@@ -22,8 +22,8 @@ const Footer = ({ data }) => (
         <section>
           <h1>Social</h1>
           <ul>
-            {data.site.siteMetadata.socialLinks.map(l => (
-              <li>
+            {data.site.siteMetadata.socialLinks.map((l, i) => (
+              <li key={i}>
                 <a href={l.url}>{l.service}</a>
               </li>
             ))}
