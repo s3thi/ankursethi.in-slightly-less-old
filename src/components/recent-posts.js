@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
-import moment from "moment";
 
 import { makePostUrl } from "../utils/urls";
+import { formatNiceDate } from "../utils/dates";
 
 const RecentPosts = () => (
   <StaticQuery
@@ -14,7 +14,7 @@ const RecentPosts = () => (
         <section>
           <h1>Recent Posts</h1>
           {recentPosts.map(({ node: { frontmatter, excerpt } }, i) => {
-            const niceDate = moment(frontmatter.date).format("MMMM Do YYYY");
+            const niceDate = formatNiceDate(frontmatter.date);
 
             return (
               <article key={i}>
