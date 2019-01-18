@@ -45,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const postPath = makePostUrl(date, slug);
     createPage({
       path: postPath,
-      component: path.resolve("./src/templates/page.js"),
+      component: path.resolve("./src/templates/post.js"),
       context: {
         // This should query on both date and slug.
         slug: edge.node.frontmatter.slug
