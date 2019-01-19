@@ -1,6 +1,6 @@
 const path = require("path");
 const moment = require("moment");
-const { makePostUrl } = require("./src/utils/urls");
+const { makePostUrl, makeBlogArchiveUrl } = require("./src/utils/urls");
 
 const markdownQuery = (regex) => `
   {
@@ -38,8 +38,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postRegex = (s => s.raw)`/(\/content\/posts)/.*\\.md$/`;
   const postResult = await graphql(markdownQuery(postRegex));
+  const posts = postResult.data.allMarkdownRemark.edges;
 
-  for (let edge of postResult.data.allMarkdownRemark.edges) {
+  for (let edge of posts) {
     const date = moment(edge.node.frontmatter.date);
     const slug = edge.node.frontmatter.slug;
     const postPath = makePostUrl(date, slug);
@@ -47,11 +48,26 @@ exports.createPages = async ({ graphql, actions }) => {
       path: postPath,
       component: path.resolve("./src/templates/post.js"),
       context: {
-        // This should query on both date and slug.
+        // TODO: this should query on both date and slug
         slug: edge.node.frontmatter.slug
       }
     });
   }
+
+  const postsPerPage = 25;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: makeBlogArchiveUrl(i + 1),
+      component: path.resolve("./src/templates/blog-archive.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        pageNumber: i + 1,
+        numPages
+      }
+    });
+  });
 
   return Promise.resolve();
 };

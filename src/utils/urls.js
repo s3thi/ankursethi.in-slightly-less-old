@@ -8,3 +8,6 @@ module.exports.makePostUrl = (date, slug) => {
 
 module.exports.makeCategoryUrl = category =>
   `/category/${slugify(category, { lower: true })}/`;
+
+module.exports.makeBlogArchiveUrl = pageNumber =>
+  pageNumber === 1 ? "/blog/" : `/blog/page/${pageNumber}/`;
