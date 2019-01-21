@@ -2,15 +2,17 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import PostArchive from "../components/post-archive";
-import { makeBlogArchiveUrl } from "../utils/urls";
+import { makeCategoryUrl } from "../utils/urls";
 
-const BlogArchive = ({ data, pageContext }) => {
+const CategoryArchive = ({ data, pageContext }) => {
   const titleFn = context =>
-    `Blog Archive (Page ${context.pageNumber}) — ${
+    `Archive for ${context.category} (Page ${context.pageNumber}) — ${
       data.site.siteMetadata.title
     }`;
-  const headingFn = context => `Blog Archive - Page ${context.pageNumber}`;
-  const archivePageUrlFn = pageNumber => makeBlogArchiveUrl(pageNumber);
+  const headingFn = context =>
+    `Archive for ${context.category} - Page ${context.pageNumber}`;
+  const archivePageUrlFn = (pageNumber, context) =>
+    makeCategoryUrl(context.category, pageNumber);
 
   return (
     <PostArchive
@@ -24,9 +26,12 @@ const BlogArchive = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
+  query categoryListQuery($skip: Int!, $limit: Int!, $category: String!) {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//content/posts/.*[.]md$/" } }
+      filter: {
+        fileAbsolutePath: { regex: "//content/posts/.*[.]md$/" }
+        frontmatter: { category: { eq: $category } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: $limit
       skip: $skip
@@ -52,4 +57,4 @@ export const query = graphql`
   }
 `;
 
-export default BlogArchive;
+export default CategoryArchive;
