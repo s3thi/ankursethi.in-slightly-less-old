@@ -19,7 +19,7 @@ const Footer = ({ data }) => (
     query={query}
     render={data => (
       <footer>
-        <section>
+        <nav>
           <h1>Social</h1>
           <ul>
             {data.site.siteMetadata.socialLinks.map((l, i) => (
@@ -28,7 +28,7 @@ const Footer = ({ data }) => (
               </li>
             ))}
           </ul>
-        </section>
+        </nav>
       </footer>
     )}
   />
