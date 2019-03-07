@@ -18,11 +18,13 @@ const Header = ({ data }) => (
       <header>
         <h1>{data.site.siteMetadata.title}</h1>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/work">Work</Link>
-          <Link to="/talks">Talks</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/about-contact">About + Contact</Link>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/talks">Talks</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/about-contact">About + Contact</Link></li>
+          </ul>
         </nav>
       </header>
     )}
