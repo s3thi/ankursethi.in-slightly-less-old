@@ -2,17 +2,59 @@
 @import "fonts/InriaSerif/InriaSerif.css";
 @import "_variables";
 
-header,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-family: $font-family-sans-serif;
+  background-color: $color-secondary-lightest;
+  color: $color-body-text;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-headings;
+  font-family: $font-family-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 4rem;
+}
+
+a {
+  color: $color-primary;
+}
+
+header.main-header,
 footer,
 main {
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 2rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $color-secondary;
 }
 
 nav {
+  margin: 2rem 0 4rem 0;
+
   ul {
     list-style: none;
-    margin: 0;
+    padding: 0;
   }
 
   li {
@@ -23,12 +65,50 @@ nav {
       margin-left: 0;
     }
   }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  font-family: "Inria Serif", "Georgia", "serif";
+  background-color: $color-primary;
+  color: white;
+  padding: 1rem;
+}
+
+.page__header,
+.post__header {
+  margin: 2rem 0;
+}
+
+.page__meta,
+.post__meta {
+  color: $color-captions;
+  margin: 0;
+  font-size: $caption-font-size;
+}
+
+.page__title,
+.post__title {
+  margin: 0;
+  font-size: $page-title-font-size;
+}
+
+.recent-posts__list {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-posts__meta {
+  color: $color-captions;
 }
 
 @media (min-width: 800px) {
   header,
   footer,
   main {
-    max-width: 30rem;
+    max-width: 36rem;
   }
 }

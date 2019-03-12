@@ -13,23 +13,21 @@ const RecentPosts = () => (
       return (
         <section>
           <h1>Recent Posts</h1>
+          <ul className="recent-posts__list">
           {recentPosts.map(({ node: { frontmatter, excerpt } }, i) => {
             const niceDate = formatNiceDate(frontmatter.date);
 
             return (
-              <article key={i}>
-                <h2>
-                  <Link to={makePostUrl(frontmatter.date, frontmatter.slug)}>
-                    {frontmatter.title}
-                  </Link>
-                </h2>
-                <p>
-                  Posted on <time dateTime={frontmatter.date}>{niceDate}</time>
-                </p>
-                <p>{frontmatter.description || excerpt}</p>
-              </article>
+              <li key={i}>
+                <Link to={makePostUrl(frontmatter.date, frontmatter.slug)}>
+                  {frontmatter.title}
+                </Link>
+                <time className="recent-posts__meta" dateTime={frontmatter.date}> — {niceDate}</time>
+              </li>
             );
           })}
+          </ul>
+          <Link to="/blog">More posts</Link>
         </section>
       );
     }}

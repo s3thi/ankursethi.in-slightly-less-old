@@ -19,7 +19,9 @@ const PostArchive = ({ data, context, headingFn, titleFn, archivePageUrlFn }) =>
       <Helmet title={titleFn(context)} />
       <main>
         <section>
-          <h1>{headingFn(context)}</h1>
+          <header className="page__header">
+            <h1 className="page__title">{headingFn(context)}</h1>
+          </header>
           {edges.map((edge, i) => {
             const {
               frontmatter: { title, date, slug, description },
@@ -27,12 +29,14 @@ const PostArchive = ({ data, context, headingFn, titleFn, archivePageUrlFn }) =>
             } = edge.node;
             return (
               <article>
-                <h1 key={i}>
-                  <Link to={makePostUrl(date, slug)}>{title}</Link>
-                </h1>
-                <p>
-                  Posted on <time dateTime={date}>{formatNiceDate(date)}</time>
-                </p>
+                <header>
+                  <h1 key={i}>
+                    <Link to={makePostUrl(date, slug)}>{title}</Link>
+                  </h1>
+                  <p className="page__meta">
+                    Posted on <time dateTime={date}>{formatNiceDate(date)}</time>
+                  </p>
+                </header>
                 <p>{description || excerpt}</p>
               </article>
             );

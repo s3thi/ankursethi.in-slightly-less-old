@@ -19,11 +19,13 @@ const PageTemplate = ({ data }) => {
       <Helmet title={`${title} — ${data.site.siteMetadata.title}`} />
       <main>
         <article>
-          <h1>{title}</h1>
-          <p>
-            Posted on <time dateTime={date}>{niceDate}</time> in{" "}
-            <Link to={makeCategoryUrl(category)}>{category}</Link>
-          </p>
+          <header className="post__header">
+            <h1 className="post__title">{title}</h1>
+            <p className="post__meta">
+              <time dateTime={date}>{niceDate}</time> in{" "}
+              <Link to={makeCategoryUrl(category)}>{category}</Link>
+            </p>
+          </header>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>

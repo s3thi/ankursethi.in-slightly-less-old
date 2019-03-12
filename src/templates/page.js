@@ -10,7 +10,9 @@ const PageTemplate = ({ data }) => {
     <BaseLayout>
       <Helmet title={`${post.frontmatter.title} — ${data.site.siteMetadata.title}`} />
       <main>
-        <h1>{post.frontmatter.title}</h1>
+        <header className="page__header">
+          <h1 className="page__title">{post.frontmatter.title}</h1>
+        </header>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </main>
     </BaseLayout>
